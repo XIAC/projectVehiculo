@@ -87,15 +87,4 @@ class VehiculoController extends Controller
     {
         //
     }
-    public function  listarUsuarioVehiculos(){
-        $users = Vehiculo::join('usuarios', 'usuarios.id', '=', 'vehiculos.usuario_id')
-                ->get();
-        return $users;
-    }
-    public function listarModelos(Request $request){
-
-        $vehiculos = Vehiculo::where('modelo', 'like', $request->modelo.'%')
-                    ->get();
-        return $vehiculos;
-    }
 }
